@@ -8,7 +8,23 @@
 */
 
 const lampSwitchButton = document.getElementById('lamp-switch');
+const lampImg = document.getElementById('lamp-img');
+
+let switchState = 0; // 0 = off, 1 = on
 
 lampSwitchButton.addEventListener('click', function() {
-  console.log('funziona')
+  if (switchState < 1) {
+    lampImg.src = 'img/yellow_lamp.png';
+
+    lampSwitchButton.innerHTML = 'Spegni'
+
+    return switchState++;
+  };
+
+  lampImg.src = 'img/white_lamp.png';
+
+  lampSwitchButton.innerHTML = 'Accendi'
+
+  return switchState--;
+
 });
